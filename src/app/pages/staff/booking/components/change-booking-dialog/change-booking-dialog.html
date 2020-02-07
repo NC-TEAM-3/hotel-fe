@@ -81,7 +81,7 @@
           <br/>
           <mat-form-field>
             <mat-label>Apartments Class</mat-label>
-            <mat-select placeholder="Class name" formControlName="nameClass">
+            <mat-select placeholder="Class name" formControlName="nameClass" [disabled]="true">
               <mat-option *ngFor="let apartmentClass of apartmentsClassesList"
                           (click)="onSelectAprtmntClass(apartmentClass)"
                           value={{apartmentClass?.nameClass}}>
@@ -92,7 +92,7 @@
           </mat-form-field>
           <mat-dialog-actions align="end">
             <p></p>
-            <button style="background-color: tomato" class="mat-button"
+            <button style="background-color: lightskyblue" class="mat-button"
                     mat-raised-button (click)="viewBookingAddServices()"> Services
           </button>
           <button style="background-color: tomato" class="mat-button"

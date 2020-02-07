@@ -7,16 +7,24 @@ section {
   justify-content: space-between;
 }
 
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .table {
   /*-webkit-box-shadow: 0px 0px 10px -2px #00000042;*/
   /*box-shadow: 0px 0px 10px -2px #00000042;*/
   overflow-y: scroll;
   float: left;
-  width: 70%;
+  min-width: 70%;
+  width: 100%;
   height: calc(100vh - 90px);
   background-color: white;
 }
-
 .buttons > p {
   color: coral;
 }
@@ -35,6 +43,7 @@ section {
 }
 
 .mat-button{
+  margin: 20px 0 0 20px;
   width: 100px;
 }
 

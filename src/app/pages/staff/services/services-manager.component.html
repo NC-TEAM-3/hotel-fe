@@ -1,16 +1,13 @@
 <section class="apartment-list">
 
-  <div class="wrap">
-    <div class="tools">
-      <div class="buttons">
-        <p>Services list</p>
-        <button class="mat-button" mat-raised-button (click)="addDialog()">Add</button>
-      </div>
-      <app-change-services-dialog *ngIf="row$ | async"></app-change-services-dialog>
-    </div>
+  <mat-sidenav-container class="wrap">
 
-    <div class="table">
-      <services-table-component></services-table-component>
-    </div>
-  </div>
+    <mat-sidenav class="tools" mode="side" [(opened)]="isOpenSidenav">
+      <app-change-services-dialog *ngIf="row$ | async"></app-change-services-dialog>
+    </mat-sidenav>
+    <mat-sidenav-content class="table">
+          <button class="mat-button" mat-raised-button (click)="addDialog()">Add</button>
+          <services-table-component class="table-component"></services-table-component>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </section>

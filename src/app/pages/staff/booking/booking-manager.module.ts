@@ -31,6 +31,7 @@ import {DatePipe} from '@angular/common';
 import {APP_DATE_FORMATS, AppDateAdapter} from "../../../utils/AppDateAdapter";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {AnimationsModule} from "../../../modules/animations/animations.module";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import {AnimationsModule} from "../../../modules/animations/animations.module";
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    AnimationsModule
+    AnimationsModule,
+    MatSidenavModule
   ],
   exports: [
     MatButtonModule,

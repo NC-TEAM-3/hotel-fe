@@ -45,7 +45,8 @@ export class AddBookingDialogComponent implements OnInit {
     'Created',
     'CheckedIn',
     'Closed',
-    'Canceled'
+    'Canceled',
+    'Confirmed'
   ];
   private selectedStatus: BookingStatus;
 
