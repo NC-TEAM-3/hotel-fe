@@ -16,25 +16,27 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {AnimationsModule} from "../../../modules/animations/animations.module";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 @NgModule({
-    imports: [
-        MatPaginatorModule,
-        BrowserModule,
-        HttpClientModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatTableModule,
-        MatDialogModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatExpansionModule,
-        MatCheckboxModule,
-        AnimationsModule,
-      MatSnackBarModule
-    ],
+  imports: [
+    MatPaginatorModule,
+    BrowserModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTableModule,
+    MatDialogModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    AnimationsModule,
+    MatSnackBarModule,
+    MatSidenavModule
+  ],
   exports: [
     MatButtonModule,
     MatDialogModule,

@@ -22,12 +22,18 @@ import {SelectService} from "../../../services/select.service";
 export class ApartmentsClassesManagerComponent extends Unsubscribable {
   id$: Observable<string>;
   subscription: Subscription;
+  isOpenSidenav = 'false';
 
   constructor(public dialog: MatDialog,
               public selectService: SelectService) {
     super(selectService);
     this.subscription = this.selectService.selectAnnounced$
-      .subscribe(id => this.id$ = this.selectService.selectAnnounced$);
+      .subscribe(id => {
+        if (this.id$ != null) {
+          this.isOpenSidenav = 'opened';
+        }
+        this.id$ = this.selectService.selectAnnounced$;
+      });
   }
 
   addDialog() {

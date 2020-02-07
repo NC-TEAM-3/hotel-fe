@@ -1,22 +1,13 @@
 <section class="booking-list">
+  <mat-sidenav-container class="wrap">
 
-  <div class="wrap">
+    <mat-sidenav class="tools" mode="side" [(opened)]="isOpenSidenav">
+      <app-change-unavailable-apartment-dialog *ngIf="id$ | async"></app-change-unavailable-apartment-dialog>
+    </mat-sidenav>
+    <mat-sidenav-content class="table">
+      <button class="mat-button" mat-raised-button (click)="addUnavailableApartmentDialog()">Add</button>
+      <unavailable-apartments-table-component class="table-component"></unavailable-apartments-table-component>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-    <div class="tools">
-      <div class="buttons">
-        <p>Unavailable Apartments</p>
-        <button class="mat-button" mat-raised-button (click)="addUnavailableApartmentDialog()">Add</button>
-      </div>
-      <div class="change">
-        <app-change-unavailable-apartment-dialog
-          *ngIf="id$ | async; else loading"></app-change-unavailable-apartment-dialog>
-      </div>
-      <ng-template #loading></ng-template>
-    </div>
-
-    <div class="table">
-      <unavailable-apartments-table-component></unavailable-apartments-table-component>
-    </div>
-
-  </div>
 </section>

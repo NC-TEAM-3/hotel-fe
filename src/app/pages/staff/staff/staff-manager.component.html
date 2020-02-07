@@ -1,20 +1,13 @@
 <section class="apartment-list">
+  <mat-sidenav-container class="wrap">
 
-  <div class="wrap">
+    <mat-sidenav class="tools" mode="side" [(opened)]="isOpenSidenav">
+      <app-change-staff-dialog *ngIf="row$ | async"></app-change-staff-dialog>
+    </mat-sidenav>
+    <mat-sidenav-content class="table">
+      <button class="mat-button" mat-raised-button (click)="addDialog()">Add</button>
+      <staff-table-component class="table-component"></staff-table-component>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-    <div class="tools">
-      <div class="buttons">
-        <p>Staff list</p>
-        <button class="mat-button" mat-raised-button (click)="addDialog()">Add</button>
-      </div>
-      <div class="change">
-        <app-change-staff-dialog *ngIf="row$ | async"></app-change-staff-dialog>
-      </div>
-    </div>
-
-    <div class="table">
-      <staff-table-component></staff-table-component>
-    </div>
-
-  </div>
 </section>

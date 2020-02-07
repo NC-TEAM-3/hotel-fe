@@ -1,20 +1,15 @@
 <section class="task-list">
-  <div class="wrap">
-    <div class="tools">
-      <div class="buttons">
-        <p>Task list</p>
-        <button class="mat-button" mat-raised-button (click)="addDialog()">Add</button>
-      </div>
-      <div class="change">
-        <app-change-task-dialog *ngIf="row$ | async"></app-change-task-dialog>
-      </div>
-    </div>
+  <mat-sidenav-container class="wrap">
 
-    <div class="table">
-      <task-table-component></task-table-component>
-    </div>
+    <mat-sidenav class="tools" mode="side" [(opened)]="isOpenSidenav">
+      <app-change-task-dialog *ngIf="row$ | async"></app-change-task-dialog>
+    </mat-sidenav>
+    <mat-sidenav-content class="table">
+      <button class="mat-button" mat-raised-button (click)="addDialog()">Add</button>
+      <task-table-component class="table-component"></task-table-component>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-  </div>
 </section>
 
 

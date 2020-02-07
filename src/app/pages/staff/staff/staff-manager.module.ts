@@ -21,26 +21,28 @@ import {AddStaffDialogComponent} from './components/add-staff-dialog/add-staff-d
 import {MatExpansionModule} from "@angular/material/expansion";
 import {AnimationsModule} from "../../../modules/animations/animations.module";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 @NgModule({
-    imports: [
-        MatPaginatorModule,
-        BrowserModule,
-        HttpClientModule,
-        MatButtonModule,
-        MatDialogModule,
-        MatInputModule,
-        MatSelectModule,
-        MatTableModule,
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        MatAutocompleteModule,
-        MatCheckboxModule,
-        MatExpansionModule,
-        AnimationsModule,
-      MatSnackBarModule
-    ],
+  imports: [
+    MatPaginatorModule,
+    BrowserModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+    AnimationsModule,
+    MatSnackBarModule,
+    MatSidenavModule
+  ],
   exports: [
     MatButtonModule,
     MatDialogModule,
