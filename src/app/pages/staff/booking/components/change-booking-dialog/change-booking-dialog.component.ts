@@ -13,7 +13,6 @@ import {Apartments} from '../../../../../component/apartments';
 import {BookingStatus} from '../../../../../component/booking-status.type';
 import {MatDialog} from '@angular/material';
 import {DeleteBookingDialogComponent} from '../delete-booking-dialog/delete-booking-dialog.component';
-import {BookingAddServiceDialogComponent} from '../booking-add-service-dialog/booking-add-service-dialog.component';
 import {DatePipe} from '@angular/common';
 import {MatSnackBar} from "@angular/material/snack-bar";
 
@@ -285,14 +284,6 @@ export class ChangeBookingDialogComponent extends Unsubscribable implements OnIn
   getAllApartments() {
     this.http.get(URL + 'apartments').subscribe(res => {
       this.apartmentsList = (res as Apartments[]);
-    });
-  }
-
-  viewBookingAddServices() {
-    const dialogRef = this.dialog.open(BookingAddServiceDialogComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
     });
   }
 
