@@ -19,7 +19,7 @@
           <p>Start date</p>
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="startDateFilter">
+            <input matInput (keyup)="applyFilter($event, 'startDate')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.startDate}} </td>
@@ -30,7 +30,7 @@
           <p>End date</p>
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="endDateFilter">
+            <input matInput (keyup)="applyFilter($event, 'endDate')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.endDate}} </td>
@@ -41,7 +41,7 @@
           <p>Total price</p>
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="totalPriceFilter">
+            <input matInput (keyup)="applyFilter($event, 'totalPrice')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.totalPrice}} </td>
@@ -50,9 +50,9 @@
       <ng-container matColumnDef="comments">
         <th mat-header-cell *matHeaderCellDef>
           <p>Comments</p>
-          <mat-form-field class="filter" floatLabel="never">
+          <mat-form-field  style="opacity: 0" class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="commentsFilter">
+            <input matInput disabled  [formControl]="commentsFilter">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.comment}} </td>
@@ -63,7 +63,7 @@
           <p>Created date</p>
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="createdDateFilter">
+            <input matInput (keyup)="applyFilter($event, 'createdDate')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.createdDate}} </td>
@@ -72,9 +72,9 @@
       <ng-container matColumnDef="review">
         <th mat-header-cell *matHeaderCellDef>
           <p>Review</p>
-          <mat-form-field class="filter" floatLabel="never">
+          <mat-form-field style="opacity: 0" class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="reviewFilter">
+            <input matInput disabled (keyup)="applyFilter($event, 'review')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.review}} </td>
@@ -85,7 +85,7 @@
           <p>Booking status</p>
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="bookingStatusFilter">
+            <input matInput (keyup)="applyFilter($event, 'bookingStatus')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.bookingStatus}} </td>
@@ -94,9 +94,9 @@
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef>
           <p>Booked by</p>
-          <mat-form-field class="filter" floatLabel="never">
+          <mat-form-field style="opacity: 0" class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="bookedByFilter">
+            <input matInput disabled (keyup)="applyFilter($event, 'user.email')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking">
@@ -115,9 +115,9 @@
       <ng-container matColumnDef="nameClass">
         <th mat-header-cell *matHeaderCellDef>
           <p>Apartment class name</p>
-          <mat-form-field class="filter" floatLabel="never">
+          <mat-form-field style="opacity: 0" class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="apartmentClassFilter">
+            <input matInput disabled (keyup)="applyFilter($event, 'apartmentClass.nameClass')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking"> {{booking?.apartmentClass.nameClass}} </td>
@@ -126,9 +126,9 @@
       <ng-container matColumnDef="roomNumber">
         <th mat-header-cell *matHeaderCellDef>
           <p>Apartment room number</p>
-          <mat-form-field class="filter" floatLabel="never">
+          <mat-form-field style="opacity: 0"class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
-            <input matInput [formControl]="apartmentFilter">
+            <input matInput disabled (keyup)="applyFilter($event, 'apartment.roomNumber')" placeholder="Ex. ium">
           </mat-form-field>
         </th>
         <td mat-cell *matCellDef="let booking">
