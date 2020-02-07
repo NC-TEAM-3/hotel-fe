@@ -9,6 +9,7 @@ import {FormControl} from '@angular/forms';
 import {DataTransferService} from '../../../../../services/data-transfer.service';
 import {SelectService} from '../../../../../services/select.service';
 import {Subscription} from "rxjs";
+import {Task} from '../../../../../component/task';
 
 
 const URL = new ConstantsService().BASE_URL;
@@ -195,11 +196,19 @@ export class BookingTableComponent extends Unsubscribable implements OnInit, Aft
   }
 
   public getAllBookings = () => {
-    this.http.get(URL + 'bookings/').subscribe(res => {
-      console.log(res);
-      this.dataSource.data = (res as Booking[]);
+    this.http.get(URL + 'bookings/').subscribe((res: Booking[]) => {
+      this.dataSource.data = res;
       this.isEmptyTable = true;
     });
+  }
+
+  applyFilter(event: Event, key: string) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    // tslint:disable-next-line
+    this.dataSource.filterPredicate = function(data, filter) {
+      return data[key].toString().toLowerCase().indexOf(filterValue.toLowerCase()) !== -1;
+    };
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   createFilter(): (data: any, filter: string) => boolean {
