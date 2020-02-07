@@ -1,20 +1,13 @@
 <section class="apartment-list">
+  <mat-sidenav-container class="wrap">
 
-  <div class="wrap">
+    <mat-sidenav class="tools" mode="side" [(opened)]="isOpenSidenav">
+      <app-change-apartments-dialog *ngIf="id$ | async"></app-change-apartments-dialog>
+    </mat-sidenav>
+    <mat-sidenav-content class="table">
+      <button class="mat-button" mat-raised-button (click)="addApartmentDialog()">Add</button>
+      <apartments-table-component class="table-component"></apartments-table-component>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-    <div class="tools">
-      <div class="buttons">
-        <p>Apartments list</p>
-        <button class="mat-button" mat-raised-button (click)="addApartmentDialog()">Add</button>
-      </div>
-      <div class="change">
-        <app-change-apartments-dialog *ngIf="id$ | async"></app-change-apartments-dialog>
-      </div>
-    </div>
-
-    <div class="table">
-      <apartments-table-component></apartments-table-component>
-    </div>
-
-  </div>
 </section>

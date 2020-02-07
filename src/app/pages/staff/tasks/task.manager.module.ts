@@ -19,28 +19,30 @@ import {TextMaskModule} from "angular2-text-mask";
 import {NgxMaskModule} from "ngx-mask";
 import {AnimationsModule} from "../../../modules/animations/animations.module";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        MatButtonModule,
-        ReactiveFormsModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatPaginatorModule,
-        MatTableModule,
-        MatExpansionModule,
-        TextMaskModule,
-        FormsModule,
-        NgxMaskModule.forRoot({
-            showMaskTyped: true,
-        }),
-        AnimationsModule,
-      MatSnackBarModule
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatExpansionModule,
+    TextMaskModule,
+    FormsModule,
+    NgxMaskModule.forRoot({
+      showMaskTyped: true,
+    }),
+    AnimationsModule,
+    MatSnackBarModule,
+    MatSidenavModule
+  ],
   declarations: [
     TaskManagerComponent,
     AddTaskDialogComponent,

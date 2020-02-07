@@ -15,23 +15,25 @@ import {DeleteApartmentsClassesDialogComponent} from './components/delete-apartm
 import {MatExpansionModule} from "@angular/material/expansion";
 import {AnimationsModule} from "../../../modules/animations/animations.module";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
-    imports: [
-        MatPaginatorModule,
-        BrowserModule,
-        HttpClientModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatTableModule,
-        MatDialogModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatExpansionModule,
-        AnimationsModule,
-      MatSnackBarModule
-    ],
+  imports: [
+    MatPaginatorModule,
+    BrowserModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTableModule,
+    MatDialogModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    AnimationsModule,
+    MatSnackBarModule,
+    MatSidenavModule
+  ],
   exports: [
     MatButtonModule,
     MatDialogModule,

@@ -1,21 +1,13 @@
 <section class="booking-list">
+  <mat-sidenav-container class="wrap">
 
-  <div class="wrap">
+    <mat-sidenav class="tools" mode="side" [(opened)]="isOpenSidenav">
+      <app-change-booking-dialog *ngIf="id$ | async"></app-change-booking-dialog>
+    </mat-sidenav>
+    <mat-sidenav-content class="table">
+      <button class="mat-button" mat-raised-button (click)="addApartmentPriceDialog()">Add</button>
+      <apartment-prices-table-component class="table-component"></apartment-prices-table-component>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-    <div class="tools">
-      <div class="buttons">
-        <p>Apartment prices</p>
-        <button class="mat-button" mat-raised-button (click)="addApartmentPriceDialog()">Add</button>
-      </div>
-      <div class="change">
-        <app-change-booking-dialog *ngIf="id$ | async; else loading"></app-change-booking-dialog>
-      </div>
-      <ng-template #loading></ng-template>
-    </div>
-
-    <div class="table">
-      <apartment-prices-table-component></apartment-prices-table-component>
-    </div>
-
-  </div>
 </section>

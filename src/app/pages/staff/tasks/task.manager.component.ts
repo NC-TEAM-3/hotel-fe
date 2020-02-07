@@ -16,11 +16,17 @@ import {Unsubscribable} from "../../../component/Unsubscribable";
 
 export class TaskManagerComponent extends Unsubscribable {
   row$: Observable<any>;
+  isOpenSidenav = 'false';
 
   constructor(public dialog: MatDialog, public selectService: SelectService) {
     super(selectService);
     this.selectService.selectAnnounced$
-      .subscribe(id => this.row$ = this.selectService.selectAnnounced$);
+      .subscribe(id => {
+        if (this.row$ != null) {
+          this.isOpenSidenav = 'opened';
+        }
+        this.row$ = this.selectService.selectAnnounced$;
+      });
   }
 
   addDialog() {

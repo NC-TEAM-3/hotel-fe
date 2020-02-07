@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
     this.authenticationForm = this.fb.group({
       // TODO: delete values
       login: ['',[Validators.required, Validators.minLength(5), Validators.maxLength(20), Validators.pattern('(\\w|_|\\d)+')]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern('(\\w|_|\\d)+')]]
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern('^\\S{1,20}$')]]
     });
   }
 
